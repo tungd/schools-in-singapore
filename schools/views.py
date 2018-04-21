@@ -13,5 +13,18 @@ class SchoolListView(ListAPIView):
         if query is None:
             return self.queryset
 
-        match = MultiMatch(query=query, fields=models.School.field_names)
+        strategy = self.request.query_params\
+                               .get('strategy', 'keyword_recognition')
+        if strategy == 'boosting':
+            # Boosting strategy: i.e ?q=west
+            # First result before: id=102, after: id=18
+            # fields = models.School.field_names
+            fields = [f'{field}^4.0' if field == 'zone_code' else field
+                      for field in models.School.field_names]
+            match = MultiMatch(query=query, fields=fields)
+        else:
+            # Keyword recognition strategy: i.e ?q=west
+            fields = models.School.field_names
+            match = MultiMatch(query=query, fields=fields)
+
         return documents.SchoolDocument.search().query(match).to_queryset()
