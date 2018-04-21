@@ -1,0 +1,27 @@
+{
+  "name": "singapore-schools",
+  "description": "Simple app to browse the schools in Singapore",
+  "private": true,
+  "author": "Tung Dao <me@tungdao.com>",
+  "version": "0.0.1",
+  "repository": "https://github.com/tungd/singapore-schools.git",
+  "scripts": {
+    "start": "brunch watch --server",
+    "build": "brunch build --production"
+  },
+  "dependencies": {
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "tachyons": "^4.9.1"
+  },
+  "devDependencies": {
+    "auto-reload-brunch": "^2",
+    "babel-brunch": "^6.1.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "brunch": "^2",
+    "clean-css-brunch": "^2",
+    "less-brunch": "^2.10.0",
+    "uglify-js-brunch": "^2"
+  }
+}
