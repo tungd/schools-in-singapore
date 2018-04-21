@@ -9,6 +9,7 @@ django = "*"
 django-haystack = "*"
 djangorestframework = "*"
 django-filter = "*"
+drf-haystack = "*"
 
 [dev-packages]
 
