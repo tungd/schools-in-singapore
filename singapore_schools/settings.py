@@ -27,6 +27,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+ADMINS = [('Tung Dao', 'me@tungdao.com')]
+
+SERVER_EMAIL = 'noreply@schools.gov.sg'
+
 
 # Application definition
 
