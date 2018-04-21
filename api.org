@@ -87,7 +87,7 @@
             "type": "text"
           },
           "postal_code": {
-            "type": "integer"
+            "type": "text"
           },
           "session": {
             "type": "text"
@@ -109,10 +109,10 @@
     },
     "settings": {
       "index": {
-        "creation_date": "1524318817532",
+        "creation_date": "1524325702655",
         "number_of_shards": "4",
         "number_of_replicas": "0",
-        "uuid": "NA2LYbUdQ_aZRd2tqYPqIw",
+        "uuid": "K3OorQ8wTRW0JlQB1_jhAw",
         "version": {
           "created": "6020499"
         },
