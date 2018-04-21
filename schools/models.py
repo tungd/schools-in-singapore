@@ -20,3 +20,6 @@ class School(models.Model):
     main_level = models.CharField(max_length=255)
     language = models.CharField(max_length=255)
     offer = models.TextField()
+
+    def __str__(self):
+        return self.name
