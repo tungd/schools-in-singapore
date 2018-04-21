@@ -141,3 +141,13 @@ ELASTICSEARCH_DSL = {
         'hosts': os.getenv('ELASTICSEARCH_URL', 'localhost:9200')
     },
 }
+
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+    },
+    'field_keywords': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+    }
+}
