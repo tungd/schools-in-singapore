@@ -1,0 +1,5 @@
+* List schools
+
+#+BEGIN_SRC http :pretty
+  GET http://localhost:8000/api/v1/schools
+#+END_SRC
