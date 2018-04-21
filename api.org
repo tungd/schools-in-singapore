@@ -434,3 +434,211 @@
   ]
 }
 #+end_example
+
+* ElasticSearch
+
+#+BEGIN_SRC http :pretty
+  GET http://localhost:9200/schools/_search?q=Nanyang
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+{
+  "took": 206,
+  "timed_out": false,
+  "_shards": {
+    "total": 4,
+    "successful": 4,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": 7,
+    "max_score": 6.6910458,
+    "hits": [
+      {
+        "_index": "schools",
+        "_type": "doc",
+        "_id": "299",
+        "_score": 6.6910458,
+        "_source": {
+          "name": "NANYANG PRIMARY SCHOOL",
+          "website": "http://www.nyps.moe.edu.sg",
+          "address": "52 KING'S ROAD",
+          "postal_code": 268097,
+          "phone_number": "64672677",
+          "fax_number": "64686913",
+          "email": "NYPS@MOE.EDU.SG",
+          "vision_statement": "Learners of Character, Leaders in Action",
+          "mission_statement": "Developing our pupils to reach their fullest potential within a bicultural environment that is steeped in diligence, prudence, respectability and simplicity, thereby enabling them to contribute to society.",
+          "philosophy": "Nanyang Primary School (NYPS) was established in 1917 as the primary section of The Singapore Nanyang Girls' School. NYPS was separated from the secondary section in 1978 due to increasing pupil enrolment and has functioned as a single-session school since 2004.  It was accorded the Special Assistance Plan (SAP) status in 1984.  In 1990, it began to offer MOE's Gifted Education Programme (GEP). <br /><br />The school strives to provide an education which prepares the students beyond academic excellence. With the provision of a bi-cultural learning environment, students are nurtured to be learners of character and leaders who will create a positive impact on their communities and society. <br /><br />The Nanyang Curriculum adopts the Head, Heart and Hands approach for the holistic development of the students, as the school believes that internalisation, reflection and putting into action values and skills, are key to learning. The key leverage for the holistic development of students in the Nanyang Curriculum is differentiation which caters to students' different learning needs. Building on its rich Chinese traditions and values while equipping our students with 21st century skills and competencies underscores curriculum innovation in NYPS.  <br /><br />An extensive culture for learning and innovation permeates the school as evident in the whole school embarking on the Professional Learning Community (PLC) journey, introducing Lesson Study (LS) as an additional tool to Action Research (AR) and Learning Circle (LC) for teachers to implement curriculum innovations that will deepen their pedagogical knowledge.  <br /><br />The school also believes in establishing strong partnership for the holistic development of students.  The key partners comprising the School Management Committee, Nanyang Schools Alumni Association and Parent Teacher Association work collaboratively to preserve the NYPS spirit and identity, reinforcing the values-based culture via role-modelling and their contributions and support.",
+          "dgp_code": "BUKIT TIMAH",
+          "zone_code": "WEST",
+          "cluster_code": "WEST 5",
+          "type": "GOVERNMENT-AIDED SCH",
+          "session": "SINGLE SESSION",
+          "main_level": "PRIMARY",
+          "language": "Chinese",
+          "offer": "The \"Learning Cultures through Dance\" Learning for Life Programme in Nanyang Primary School aims to develop our pupils holistically beyond academic excellence by building character with understanding of self, others and cultures and developing peaks of growth and excellence. <br /><br />Through this programme pupils learn various dance techniques; acquire knowledge related to the history of the dance; discover their potential through individual dance movements and cooperative social interaction; appreciate the aesthetic aspects of performances; gain a deeper understanding and appreciation of the various ethnic groups in Singapore and the different nationalities of the world.<br /><br />The \"Critical Thinking through Mind Sports\" Applied Learning Programme aims to cultivate in pupils a love for Mind Sports where they learn to find joy and satisfaction in a board game fully embedded with strategy and thinking skills. Through the process of learning and play, pupils acquire life and social-emotional skills; develop strong character traits, cognitive skills and psychological build-up that will serve them well not only during competitions but in daily life situations in the 21st Century.  <br /><br />Through the programme, pupils learn how to interact both on and off the playing board; develop communication, cross-cultural and socio-emotional skills; acquire skills to manage self and relationship; develop thinking skills for Mathematical learning;  acquire key attributes central to the spirit of innovation and enterprise; develop skills in becoming a self-directed learner.<br /><br />Besides the 2 Signature Programmes, NYPS also offers Appreciating Flora Art; Choir; Chinese Dance; Guzheng; Chinese Orchestra; International Dance; String Ensemble; Ceramic Art; Drawing; Photography; Badminton; Basketball; Football; Table Tennis; Tennis; Track & Field; Swimming; Wushu; Golf; International Chess; Boys' and Girls' Brigade; Scouts; Brownies; Advanced Mathematics Enrichment Club; Green Club; Weiqi."
+        }
+      },
+      {
+        "_index": "schools",
+        "_type": "doc",
+        "_id": "344",
+        "_score": 5.119422,
+        "_source": {
+          "name": "NANYANG GIRLS' HIGH SCHOOL",
+          "website": "http://www.nygh.moe.edu.sg",
+          "address": "2 LINDEN DRIVE",
+          "postal_code": 288683,
+          "phone_number": "64663275",
+          "fax_number": "64667564",
+          "email": "NYGHS@MOE.EDU.SG",
+          "vision_statement": "Every Nanyang Girl a Respected Member of Society",
+          "mission_statement": "We nurture women of character in a bilingual bicultural environment anchored in values on which our school was founded.",
+          "philosophy": "Nanyang Girls' High School has a rich tradition and illustrious history. Founded in 1917, the school has remained true to her goal in nurturing well-educated ladies who will contribute to society. Given the school's rich tradition in bicultural education, NYGH prides herself in providing a holistic education, allowing all girls to thrive in a globalised world.  Our curriculum is anchored in values that seek to develop our students to be reflective, responsive and responsible learners, equipped with the knowledge, skills and attributes for the future. The Nanyang experience engages our students in authentic and relevant learning that guides them to create meaningful, useful and shared outcomes. The curriculum allows students to make meaningful connections within and between disciplines, and develop a heart for the community by paying forward through active service. We also keep our students engaged and excited about learning through 1-1 computing. In addition, through our carefully designed experiential learning opportunities that include the Boarding School Experience at our very own Boarding School and our Global Classroom Programme, we provide our students with a holistic education ready for the globalised future.",
+          "dgp_code": "BUKIT TIMAH",
+          "zone_code": "WEST",
+          "cluster_code": "WEST 6",
+          "type": "INDEPENDENT SCHOOL",
+          "session": "SINGLE SESSION",
+          "main_level": "SECONDARY",
+          "language": "Chinese",
+          "offer": "Nanyang Seal of Excellence Talent Development Programme <br />- Four-Tier Chinese Language and Culture Programme which includes Bicultural Studies (Chinese) and Chinese Language Elective Programme<br />. Humanities Programme<br />. Science and Mathematics Talent Programme<br />. Leadership Development<br />. Art Elective Programme (AEP)<br />. Higher Music Programme (HMP)<br /><br />Other programmes that further enrich the students' holistic learning experience include:<br />. Global Classroom Programme<br />. Interdisciplinary Studies<br />. Work Experience Programme<br />. Extended Classroom Programme<br />. Boarding School Experience<br />. Conversational Malay<br />. Community Education and Community Leadership Programme<br />. Philosophical Inquiry<br />. Research Programme<br />. Translation<br />. Drama<br />. Conversational Malay<br /><br />Third Language - NYGH offers Malay Special Programme"
+        }
+      },
+      {
+        "_index": "schools",
+        "_type": "doc",
+        "_id": "16",
+        "_score": 4.545814,
+        "_source": {
+          "name": "NANYANG JUNIOR COLLEGE",
+          "website": "http://www.nanyangjc.moe.edu.sg/",
+          "address": "128 SERANGOON AVENUE 3",
+          "postal_code": 556111,
+          "phone_number": "62842281",
+          "fax_number": "62855147",
+          "email": "nyjc@moe.edu.sg",
+          "vision_statement": "A leading college serving the nation with:<br />- Enhanced character development<br />- Quality staff<br />- Quality learners<br />- Organisational excellence",
+          "mission_statement": "Uphold Values<br />Enhance Lifeskills<br />Maximise Potential",
+          "philosophy": "na",
+          "dgp_code": "SERANGOON",
+          "zone_code": "SOUTH",
+          "cluster_code": "SOUTH 6",
+          "type": "GOVERNMENT-AIDED SCH",
+          "session": "FULL DAY",
+          "main_level": "JUNIOR COLLEGE",
+          "language": "na",
+          "offer": "Art Elective Programme (AEP), Language Elective Programme (Chinese) (CLEP), Student Leadership Development Programme, Overseas Service-Learning Programme, Career Guidance Programme, Scholar Development Programme, S6 Centre of Excellance for CL and Art"
+        }
+      },
+      {
+        "_index": "schools",
+        "_type": "doc",
+        "_id": "339",
+        "_score": 4.3820286,
+        "_source": {
+          "name": "CHUNG CHENG HIGH SCHOOL (MAIN)",
+          "website": "http://www.chungchenghighmain.moe.edu.sg",
+          "address": "50 GOODMAN ROAD",
+          "postal_code": 439012,
+          "phone_number": "63441393",
+          "fax_number": "63449686",
+          "email": "CCHMS@MOE.EDU.SG",
+          "vision_statement": "Institution of Eminence, Generations of Leaders; Grounded in Values, Global in Outlook",
+          "mission_statement": "Empowering our students to be Role Models of Learning, Leaders of Society and Pillars of the Nation.",
+          "philosophy": "Guided by the school's philosophy \"Excellence in Education for All\", Chung Cheng High School (Main) is committed to the development of our students and the nurturing of 21st century leaders through a holistic learning experience anchored on strong values. As the East Zone Centre of Excellence (Chinese), the school seeks to promote good practices in the teaching and learning of Chinese and Chinese Culture. A SAP school since 1979, we are committed to deliver an effective bilingual and values-based education. Through comprehensive bi-cultural programmes and various overseas immersion programmes, the school aims to nurture bi-cultural Chung Cheng leaders who are grounded in values, global in outlook and equipped with cross-cultural literacy. The school's rich tradition in culture and arts has seen many renowned talents in the cultural, literary and arts scene amongst our graduates. The Chung Cheng Education Framework focuses on delivering a forward-looking curriculum for the 21st century, equipping all students of Chung Cheng the values and skills that will enable them to excel in the evolving global landscape. As<br />an institution of eminence, the school offers a scenic and cultural environment with ample facilities to continue delivering quality education well into the 21st century.",
+          "dgp_code": "MARINE PARADE",
+          "zone_code": "EAST",
+          "cluster_code": "EAST 4",
+          "type": "GOVERNMENT-AIDED SCH",
+          "session": "SINGLE SESSION",
+          "main_level": "SECONDARY",
+          "language": "Chinese",
+          "offer": "(1) Special Assistance Plan (SAP) School Programmes: Bi-cultural Education Programmes which include Appreciation of Chinese Culture lessons, Calligraphy & Chinese Painting lessons, Tea Art Appreciation lessons, Wushu lessons as part of PE, Dizhi (Chinese Flute) lessons, Learning Journeys to Heritage Centres. (2) Special Development Programmes in the areas of Chinese & Culture (Media production in Chinese, Translation, Literary Writing), Mathematics and Science, Art and Music.(3) Special Interest Programmes: Heritage Docent Programmes (Sun Yat Sen Nanyang Memorial Hall, Malay Heritage Centre). (4) Overseas Learning Programmes: Overseas School Immersion Programme (China Chongqing, Shanghai, Suzhou),<br />Overseas Leadership Development Programme."
+        }
+      },
+      {
+        "_index": "schools",
+        "_type": "doc",
+        "_id": "251",
+        "_score": 3.6864243,
+        "_source": {
+          "name": "TANGLIN SECONDARY SCHOOL",
+          "website": "http://www.tanglinsec.moe.edu.sg",
+          "address": "301 WEST COAST ROAD",
+          "postal_code": 127391,
+          "phone_number": "64248200",
+          "fax_number": "67734457",
+          "email": "tanglin_ss@moe.edu.sg",
+          "vision_statement": "Leaders of the Future, Pride of the Community",
+          "mission_statement": "A caring school with an innovative and engaging curriculum, TSS equips our students with the skills for active lifelong learning and inculcates in them core values that will guide them to succeed in a changing world.",
+          "philosophy": "Guided by our philosophy 'Everyone Is Unique, All Can Succeed', we provide students with rich opportunities to discover and pursue their passion so that they can define success in multiple ways. We strive towards a culture of active learning, ensuring students experience joy in learning that drive their self-directedness. To prepare students for the VUCA (Volatile, Uncertain, Complex, Ambiguous) world, we value the spirit of exploration, cultivating in students the capacity to think critically, creatively and inventively to solve problems. We want them to persevere through challenges and have the flexibility to seize opportunities. All these are grounded on the values of Respect, Responsibility, Resilience, Integrity, Care and Curiosity to Learn that ensure students work collaboratively, exercise leadership and grow to become contributing members of the community.",
+          "dgp_code": "CLEMENTI",
+          "zone_code": "WEST",
+          "cluster_code": "WEST 1",
+          "type": "GOVERNMENT SCHOOL",
+          "session": "SINGLE SESSION",
+          "main_level": "SECONDARY",
+          "language": "Chinese",
+          "offer": "The TSS curriculum is designed to provide students with rich learning opportunities to maximise their potential in the academic and co-curricular areas for future-readiness. Students can pursue subjects such as Electronics, Literature (English) and Art, on top of Pure Sciences and Additional Mathematics. Our Applied Learning Programme, Tanglin PLUS, is a distinctive programme which gives focus to the Humanities. It is aimed at developing students to become informed persons, critical thinkers, confident and effective communicators. Tanglin PLUS takes the learning of Geography, History and Social Studies beyond the classroom, enabling students to apply their knowledge and skills to real-life contexts such as in habitat enhancement programmes in the Singapore Botanic Gardens and community programmes that promote Singapore's unity and security. Tanglin PLUS complements the school's existing strengths in Mathematics, Science and Applied Subjects. For its Lifelong Learning Programme (LLP), TSS is proud to offer the Arts Programme, focusing on Music, Dance and Visual Arts. Students begin with a broad-based exposure to various musical, dance and visual art forms before opting for talent development electives to deepen their skills in show choir, dance, guitar or the visual arts. In collaboration with NAFA and NAC, the Arts Programme also provides students the exposure to the local arts scene and the career opportunities it has to offer. In TSS, it is always about growing leaders. Our customised four-year Student Leadership Development Programme ensures that students are equipped with the leadership skills and competencies so that they become compassionate leaders who are ready to serve society. The partnerships with National University of Singapore, Nanyang Technological University and Singapore Institute of Technology enable us to offer leadership mentoring programmes that inspire our students to set high goals for themselves and strive for excellence."
+        }
+      },
+      {
+        "_index": "schools",
+        "_type": "doc",
+        "_id": "222",
+        "_score": 3.4654796,
+        "_source": {
+          "name": "BROADRICK SECONDARY SCHOOL",
+          "website": "http://www.broadricksec.moe.edu.sg",
+          "address": "61 DAKOTA CRESCENT",
+          "postal_code": 399935,
+          "phone_number": "63445025",
+          "fax_number": "64471427",
+          "email": "BROADRICK_SS@MOE.EDU.SG",
+          "vision_statement": "A Dynamic School providing Holistic Education",
+          "mission_statement": "Nurturing Broadricans to be future-ready learners with Strength of Character",
+          "philosophy": "Broadrick's vision is to become a vibrant learning community where Broadricians will be equipped with life skills and knowledge to meet the challenges of a complex and changing environment.  We educate the whole child and ensure that learning is developmentally appropriate to increase confidence and motivation for learning.<br /><br />Our educational programmes provide opportunities for every Broadrician to be all-rounded and have the zest to lead a purposeful life.  In Broadrick, we focus on developing self-directed Broadricians who are rooted in values.  We also want to educate Broadricians to embrace the spirit of innovation and enterprise so that they are empowered to take calculated risks and develop the resilience to face future challenges.  Teachers are key and students are our focus.  Establishing quality relationships with our stakeholders is crucial to nurture students entrusted in our care.  Broadricians have a sense of responsibility to contribute to the family, school, community, nation and world with the purpose of making a difference.  They learn to serve and serve to learn from others.",
+          "dgp_code": "GEYLANG",
+          "zone_code": "EAST",
+          "cluster_code": "EAST 5",
+          "type": "GOVERNMENT SCHOOL",
+          "session": "SINGLE SESSION",
+          "main_level": "SECONDARY",
+          "language": "Chinese",
+          "offer": "We are recognised by MOE for \"Entrepreneurship in STEM\", which is an applied learning programme that help our students to become inquisitive leaders, critical and creative thinkers who embrace the spirit of creativity and enterprise.  Through school-based Science curriculum, students are involved in inquiry-based projects in collaboration with partners from Science Centre and Nanyang Polytechnic.  Students also learn about design thinking, marketing and examine commercial viability in product designs.  Enrichment activities include hands-on experience in constructing prototype and the Broadrick Digital Intelligence (DI) Programme, making our students to be part of a new generation of digital natives.<br /><br />In our Learning for Life Programme, we nurture Confidence And REsilience (CARE) through Aesthetics, Community and Youth Leadership.  Service Learning is our adopted methodology for experiential learning to develop character and 21st century competencies in our students.  Our comprehensive Service Learning and Aesthetics programmes are structured into the school curriculum and every student is given an opportunity to be exposed to rich, authentic learning experiences as they work with others and with the community at large.  Through these platforms, we aim to progressively develop important life skills in students, such as critical thinking, communication, leadership and active citizenry."
+        }
+      },
+      {
+        "_index": "schools",
+        "_type": "doc",
+        "_id": "250",
+        "_score": 2.850239,
+        "_source": {
+          "name": "SERANGOON GARDEN SECONDARY SCHOOL",
+          "website": "http://www.sgs.edu.sg",
+          "address": "21 SERANGOON NORTH AVENUE 1",
+          "postal_code": 555889,
+          "phone_number": "62889227",
+          "fax_number": "62888695",
+          "email": "sgss@moe.edu.sg",
+          "vision_statement": "Critical Thinkers. Thoughtful Leaders.",
+          "mission_statement": "Love to Learn, Learn to Lead.",
+          "philosophy": "Since 1959, Serangoon Garden Secondary School (SGS) has been enjoying the trust and confidence of the community and alumni over the last 58 years.  The SGS brand of education is known and valued for growing our students to be future-ready in the culture of care, learning and excellence. The culture of care is evident in the school as our students grow and develop in a safe and nurturing environment, marked by respect for teachers and peers. Anchored on the culture of learning, the vision of the school is based upon our commitment to educate our students to be able to exercise sound reasoning and reflective thinking to make good decisions and manage complexities and ambiguities. They are also able to lead themselves and others effectively with empathy and the heart to care and serve with PRIDE. One of our key beliefs is that all our students are able to learn. As such, we have in place systems and processes to stretch the talent of our higher ability students; at the same time, we have a range of student-centric intervention programmes to help the weaker students so that they can progress and achieve. Committed to the culture of excellence, we challenge our students to take responsibility for their learning, while giving them the necessary support to realise their aspirations. Our goal is to nurture your child academically, grow them socially and emotionally, and guide them towards independent thinking and problem solving. Our end goal is that SGSians will be 'Critical Thinkers and Thoughtful Leaders.'",
+          "dgp_code": "SERANGOON",
+          "zone_code": "SOUTH",
+          "cluster_code": "SOUTH 1",
+          "type": "GOVERNMENT SCHOOL",
+          "session": "SINGLE SESSION",
+          "main_level": "SECONDARY",
+          "language": "Chinese",
+          "offer": "All students enrolling in SGS are emplaced on our signature Applied Learning Programme (ALP), 'Researching Society Using Media Communication', which provides students with opportunities to apply higher order thinking skills in real-life contexts, making learning relevant and meaningful to the students. Our Learning for Life Programme (LLP) focuses on 'Nurturing Confident and Compassionate Leaders', provides students with the opportunities to hone their leadership skills and develop into confident leaders. <br />Students in the Express Course enjoy course attachments with Nanyang Polytechnics as part of our extensive ECG collaborations, while students in the Normal Course will benefit from student-centred programmes which are acknowledged by MOE through the Lee Hsien Loong Award for Innovations in the Normal Course that inculcate 21st century competencies and skills to prepare them for life. In addition, SGS offers the Academic and Character Excellence (ACE) Scholarship, sponsored by our School Advisory Committee(SAC). Express students with at least 225 points, NA students with at least 185 points and N(T) students with at least 150 points from the PSLE, who apply for our school as their first choice, will be considered. These students must have at least a 'Very Good' Conduct Grade. They will be involved in our signature programmes to stretch and prepare them to be future ready: <br />Sec 1 Science Research Programme to open the minds of our young students to the world of Science through Inquiry and Research.<br />Sec 2 Cultural Immersion Programme to encourage talented students to participate in an immersion programme with our twinning schools in Xi'an, China. This programme is also opened to non-Chinese students.<br />Sec 3 ALP Programme to provide a platform for students to facilitate learning for peers and members of the public, while giving back to the community. <br />Sec 4/5 Job Attachment Programme for our students to experience the real-world of work."
+        }
+      }
+    ]
+  }
+}
+#+end_example

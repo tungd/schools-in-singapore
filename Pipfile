@@ -6,10 +6,10 @@ name = "pypi"
 [packages]
 django = "*"
 "psycopg2-binary" = "*"
-django-haystack = "*"
 djangorestframework = "*"
 django-filter = "*"
-drf-haystack = "*"
+elasticsearch = "*"
+django-elasticsearch-dsl = {git = "https://github.com/HansAdema/django-elasticsearch-dsl.git", ref = "elasticsearch-6"}
 
 [dev-packages]
 

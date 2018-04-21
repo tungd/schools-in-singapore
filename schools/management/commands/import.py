@@ -7,8 +7,6 @@ from schools import models
 class Command(BaseCommand):
     help = 'Import schools from CSV file'
 
-    field_names = [f.name for f in models.School._meta.fields[1:]]
-
     def add_arguments(self, parser):
         parser.add_argument('path', type=str)
 
@@ -37,4 +35,4 @@ class Command(BaseCommand):
             'language': row['mothertongue1_code'],
             'offer': row['special_sdp_offered']
         })
-        return {k: row[k] for k in self.field_names}
+        return {k: row[k] for k in models.School.field_names}
