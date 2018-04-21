@@ -5,7 +5,7 @@ class School(models.Model):
     name = models.CharField(max_length=255)
     website = models.URLField()
     address = models.TextField()
-    postal_code = models.IntegerField()
+    postal_code = models.TextField()
     phone_number = models.CharField(max_length=255)
     fax_number = models.CharField(max_length=255)
     email = models.EmailField(max_length=255)
