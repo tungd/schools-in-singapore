@@ -10,6 +10,10 @@ djangorestframework = "*"
 django-filter = "*"
 elasticsearch = "*"
 django-elasticsearch-dsl = {git = "https://github.com/HansAdema/django-elasticsearch-dsl.git", ref = "elasticsearch-6"}
+python-linkedin = "*"
+linkedin = "*"
+oauthlib = "*"
+requests = "*"
 
 [dev-packages]
 

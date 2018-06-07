@@ -8,14 +8,23 @@
     {% load static %}
 
     <link rel="stylesheet" href="{% static 'app.css' %}">
+    <script type="text/javascript" src="//platform.linkedin.com/in.js">
+      api_key:   81ezgu9kt0p3bt
+      authorize: false
+    </script>
   </head>
   <body class="sans-serif black-80">
     <div class="container mw7 center mv4">
       <h1 class="f4">Schools in Singapore</h1>
 
+      <div class="flex">
+        <div id="linkedin-placeholder" class="mr2"></div>
+        <div id="fetch-profile-placeholder"></div>
+      </div>
       <div id="search-placeholder"></div>
     </div>
 
+    <script>window._sharedData = {}</script>
     <script src="{% static 'app.js' %}"></script>
   </body>
 </html>
