@@ -12,3 +12,22 @@ services:
     ports:
       - 9200:9200
       - 9300:9300
+
+  # frontend:
+  #   image: nginx
+  #   ports:
+  #     - 80:80
+  #   volumes:
+  #     - .build:/var/www/html
+  #   links:
+  #     - backend
+
+  # backend:
+  #   image: python:3
+  #   ports:
+  #     - 5000:5000
+  #   volumes:
+  #     - ./outsight:/app
+  #   links:
+  #     - db
+  #     - elasticsearch

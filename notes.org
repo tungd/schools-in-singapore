@@ -1,0 +1,84 @@
+Nginx
+uWSGI
+
+* Instance EC2
+
+React  = HTML + JS + CSS | npm run build + rsync
+Django = JSON            | fab production deploy
+
+React  = JS + CSS        | fab production deploy
+Django = HTML + JSON
+
+React  = JS + SSR (NodeJS)
+Django = JSON
+
+
+
+feat/search
+
+url + { results: [] }
+
+- fix/issue-18
+
+** Postgres
+** ElasticSearch
+** Nginx
+
+#+BEGIN_SRC conf
+  server {
+    server_name ;
+    listen 443 ssl;
+    listen [::]:443 ssl;
+
+    root /var/www/outsight;
+
+    location /api {
+      proxy_pass http://<api server ip>:5000;
+    }
+
+    location / {
+      try_files $uri /index.html;
+    }
+  }
+#+END_SRC
+
+** uWSGI
+
+Zero downtime deployment
+
+
+** Django
+
+Fabric
+
+** Makefile
+
+** Cloudflare
+
+
+* Instance EC2
+
+docker-compose.yaml : postgres, es, nginx
+Dockerfile: build
+
+docker-compose up
+
+* Profile data
+
+#+BEGIN_SRC http :pretty
+  GET https://api.linkedin.com/v1/people/~:(id,firstName,positions)?format=json
+  oauth_token: G1CXaIvT_urNI_KR-iirihHzDvYw7QPXDY3b
+#+END_SRC
+
+#+RESULTS:
+: {
+:   "firstName": "Tung",
+:   "id": "9Eleg2fRoO",
+:   "positions": {
+:     "_total": 0
+:   }
+: }
+
+* Token exchange
+
+TODO

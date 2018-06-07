@@ -3,6 +3,42 @@ import ReactDOM from 'react-dom'
 import _ from 'lodash'
 
 
+class FetchProfileData extends Component {
+
+  fetchProfileData(e) {
+    e.preventDefault()
+
+    const token = IN.ENV.auth.oauth_token
+
+    fetch(`/api/v1/linkedin-profile?access-token=${token}`)
+      .then(resp => resp.json())
+      .then(console.log)
+  }
+
+  render() {
+    return (
+      <button onClick={e => this.fetchProfileData(e)}>Fetch profile data</button>
+    )
+  }
+}
+
+
+class LinkedInLoginButton extends Component {
+
+  handleLogin(e) {
+    e.preventDefault()
+    window.IN.Event.on(window.IN, 'auth', data => console.log(data))
+    window.IN.User.authorize(data => console.log(data))
+  }
+
+  render() {
+    return (
+      <button onClick={e => this.handleLogin(e)}>Login with LinkedIn</button>
+    )
+  }
+}
+
+
 class Search extends Component {
 
   constructor(props) {
@@ -69,4 +105,6 @@ class Search extends Component {
 }
 
 
+/* ReactDOM.render(<LinkedInLoginButton />, document.querySelector('#linkedin-placeholder')) */
+/* ReactDOM.render(<FetchProfileData />, document.querySelector('#fetch-profile-placeholder')) */
 ReactDOM.render(<Search />, document.querySelector('#search-placeholder'))
