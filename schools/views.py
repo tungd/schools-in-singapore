@@ -9,7 +9,31 @@ from . import documents, models, serializers
 field_keywords_cache = caches['field_keywords']
 
 
-class SchoolListView(ListAPIView):
+class ElasticSearchPaginationMixin(object):
+
+    def to_queryset(self, search):
+        # https://github.com/encode/django-rest-framework/blob/master/rest_framework/pagination.py#L372
+        self.paginator.request = self.request
+
+        self.paginator.limit = self.paginator.get_limit(self.request)
+        if self.paginator.limit is None:
+            return search.to_queryset()
+
+        self.paginator.count = search.count()
+        self.paginator.offset = self.paginator.get_offset(self.request)
+        if self.paginator.count == 0 or self.paginator.offset > self.paginator.count:
+            return []
+
+        return search[
+            self.paginator.offset:self.paginator.offset + self.paginator.limit
+        ].to_queryset()
+
+    def paginate_queryset(self, queryset):
+        # The queryset has already been paginated
+        return list(queryset)
+
+
+class SchoolListView(ElasticSearchPaginationMixin, ListAPIView):
     queryset = models.School.objects.all()
     serializer_class = serializers.SchoolSerializer
 
@@ -59,7 +83,7 @@ class SchoolListView(ListAPIView):
             for field_name, value in filters.items():
                 search = search.filter('term', **{field_name: value})
 
-        return search.to_queryset()
+        return self.to_queryset(search)
 
     def _values_of(self, field_name):
         values = field_keywords_cache.get(field_name, None)
