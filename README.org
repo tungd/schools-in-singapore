@@ -38,319 +38,160 @@ React and ElasticSearch
 
 #+RESULTS:
 #+begin_example
-HTTP/1.1 500 Internal Server Error
-Date: Mon, 14 Oct 2019 08:04:04 GMT
-Server: WSGIServer/0.2 CPython/3.7.4
-Content-Type: text/plain; charset=utf-8
-X-Frame-Options: SAMEORIGIN
-Content-Length: 15868
-Vary: Cookie
-
-AttributeError at /api/v1/schools
-type object 'School' has no attribute 'field_names'
-
-Request Method: GET
-Request URL: http://localhost:8000/api/v1/schools?q=Nanyang
-Django Version: 2.2.6
-Python Executable: /Users/tung/Library/Caches/pypoetry/virtualenvs/schools-in-singapore-6eHyMLPa-py3.7/bin/python
-Python Version: 3.7.4
-Python Path: ['/Users/tung/Projects/insight/schools-in-singapore', '/opt/pkg/lib/python37.zip', '/opt/pkg/lib/python3.7', '/opt/pkg/lib/python3.7/lib-dynload', '/Users/tung/Library/Caches/pypoetry/virtualenvs/schools-in-singapore-6eHyMLPa-py3.7/lib/python3.7/site-packages']
-Server time: Mon, 14 Oct 2019 08:04:04 +0000
-Installed Applications:
-['django.contrib.admin',
- 'django.contrib.auth',
- 'django.contrib.contenttypes',
- 'django.contrib.sessions',
- 'django.contrib.messages',
- 'django.contrib.staticfiles',
- 'django_elasticsearch_dsl',
- 'schools']
-Installed Middleware:
-['django.middleware.security.SecurityMiddleware',
- 'django.contrib.sessions.middleware.SessionMiddleware',
- 'django.middleware.common.CommonMiddleware',
- 'django.middleware.csrf.CsrfViewMiddleware',
- 'django.contrib.auth.middleware.AuthenticationMiddleware',
- 'django.contrib.messages.middleware.MessageMiddleware',
- 'django.middleware.clickjacking.XFrameOptionsMiddleware']
-
-
-Traceback:
-
-File "/Users/tung/Library/Caches/pypoetry/virtualenvs/schools-in-singapore-6eHyMLPa-py3.7/lib/python3.7/site-packages/django/core/handlers/exception.py" in inner
-  34.             response = get_response(request)
-
-File "/Users/tung/Library/Caches/pypoetry/virtualenvs/schools-in-singapore-6eHyMLPa-py3.7/lib/python3.7/site-packages/django/core/handlers/base.py" in _get_response
-  115.                 response = self.process_exception_by_middleware(e, request)
-
-File "/Users/tung/Library/Caches/pypoetry/virtualenvs/schools-in-singapore-6eHyMLPa-py3.7/lib/python3.7/site-packages/django/core/handlers/base.py" in _get_response
-  113.                 response = wrapped_callback(request, *callback_args, **callback_kwargs)
-
-File "/Users/tung/Library/Caches/pypoetry/virtualenvs/schools-in-singapore-6eHyMLPa-py3.7/lib/python3.7/site-packages/django/views/decorators/csrf.py" in wrapped_view
-  54.         return view_func(*args, **kwargs)
-
-File "/Users/tung/Library/Caches/pypoetry/virtualenvs/schools-in-singapore-6eHyMLPa-py3.7/lib/python3.7/site-packages/django/views/generic/base.py" in view
-  71.             return self.dispatch(request, *args, **kwargs)
-
-File "/Users/tung/Library/Caches/pypoetry/virtualenvs/schools-in-singapore-6eHyMLPa-py3.7/lib/python3.7/site-packages/rest_framework/views.py" in dispatch
-  505.             response = self.handle_exception(exc)
-
-File "/Users/tung/Library/Caches/pypoetry/virtualenvs/schools-in-singapore-6eHyMLPa-py3.7/lib/python3.7/site-packages/rest_framework/views.py" in handle_exception
-  465.             self.raise_uncaught_exception(exc)
-
-File "/Users/tung/Library/Caches/pypoetry/virtualenvs/schools-in-singapore-6eHyMLPa-py3.7/lib/python3.7/site-packages/rest_framework/views.py" in raise_uncaught_exception
-  476.         raise exc
-
-File "/Users/tung/Library/Caches/pypoetry/virtualenvs/schools-in-singapore-6eHyMLPa-py3.7/lib/python3.7/site-packages/rest_framework/views.py" in dispatch
-  502.             response = handler(request, *args, **kwargs)
-
-File "/Users/tung/Library/Caches/pypoetry/virtualenvs/schools-in-singapore-6eHyMLPa-py3.7/lib/python3.7/site-packages/rest_framework/generics.py" in get
-  199.         return self.list(request, *args, **kwargs)
-
-File "/Users/tung/Library/Caches/pypoetry/virtualenvs/schools-in-singapore-6eHyMLPa-py3.7/lib/python3.7/site-packages/rest_framework/mixins.py" in list
-  38.         queryset = self.filter_queryset(self.get_queryset())
-
-File "/Users/tung/Projects/insight/schools-in-singapore/schools/views.py" in get_queryset
-  52.             fields = list(models.School.field_names - filters.keys())
-
-Exception Type: AttributeError at /api/v1/schools
-Exception Value: type object 'School' has no attribute 'field_names'
-Request information:
-USER: AnonymousUser
-
-GET:
-q = 'Nanyang'
-
-POST: No POST data
-
-FILES: No FILES data
-
-COOKIES: No cookie data
-
-META:
-CDPATH = '.:/Users/tung:/Users/tung/Projects'
-CLICOLOR = '1'
-COLORFGBG = '15;0'
-COLORTERM = 'truecolor'
-COMMAND_MODE = 'unix2003'
-CONTENT_LENGTH = ''
-CONTENT_TYPE = 'text/plain'
-DJANGO_SETTINGS_MODULE = 'singapore_schools.settings'
-GATEWAY_INTERFACE = 'CGI/1.1'
-HISTFILE = '/Users/tung/.zsh_history'
-HISTSIZE = '2000'
-HOME = '/Users/tung'
-HTTP_ACCEPT = '*/*'
-HTTP_HOST = 'localhost:8000'
-HTTP_USER_AGENT = 'curl/7.66.0'
-ITERM_PROFILE = 'Default'
-ITERM_SESSION_ID = 'w1t5p0:D543745C-DBE4-40CA-A88E-2B858C98F3DC'
-LANG = 'en_US.UTF-8'
-LC_CTYPE = 'UTF-8'
-LC_TERMINAL = 'iTerm2'
-LC_TERMINAL_VERSION = '3.3.6'
-LOCAL = '/Users/tung/.local'
-LOGNAME = 'tung'
-LaunchInstanceID = '3733B31A-8A21-4F7A-B63C-5FE185400678'
-OLDPWD = '/Users/tung/Projects/insight/platform-server/outsight'
-PATH = '/Users/tung/Library/Caches/pypoetry/virtualenvs/schools-in-singapore-6eHyMLPa-py3.7/bin:/Users/tung/.cargo/bin:/bin:/Users/tung/.pyenv/bin:/Users/tung/Applications/Emacs.app/Contents/MacOS/bin-x86_64-10_10:/Users/tung/Applications/Emacs.app/Contents/MacOS/bin:/Users/tung/.local/sbin:/Users/tung/.local/bin:/Users/tung/Projects/dotfiles/bin:/usr/local/bin:/opt/pkg/sbin:/opt/pkg/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Library/Apple/bin:/usr/local/MacGPG2/bin:/opt/pkg/sbin:/opt/pkg/bin'
-PATH_INFO = '/api/v1/schools'
-PGHOST = '127.0.0.1'
-PGPASS = 'postgres'
-PGPASSWORD = 'postgres'
-PGUSER = 'postgres'
-PWD = '/Users/tung/Projects/insight/schools-in-singapore'
-PYENV_ROOT = '/Users/tung/.pyenv'
-QUERY_STRING = 'q=Nanyang'
-REMOTE_ADDR = '127.0.0.1'
-REMOTE_HOST = ''
-REQUEST_METHOD = 'GET'
-RUN_MAIN = 'true'
-SAVEHIST = '1000'
-SCRIPT_NAME = ''
-SECURITYSESSIONID = '186a6'
-SERVER_NAME = '1.0.0.127.in-addr.arpa'
-SERVER_PORT = '8000'
-SERVER_PROTOCOL = 'HTTP/1.1'
-SERVER_SOFTWARE = 'WSGIServer/0.2'
-SHELL = '/bin/zsh'
-SHLVL = '1'
-SSH_AUTH_SOCK = '/private/tmp/com.apple.launchd.ICO4hZcCIv/Listeners'
-TERM = 'xterm-256color'
-TERM_PROGRAM = 'iTerm.app'
-TERM_PROGRAM_VERSION = '3.3.6'
-TERM_SESSION_ID = 'w1t5p0:D543745C-DBE4-40CA-A88E-2B858C98F3DC'
-TMPDIR = '/var/folders/sn/j_hy0nm57cl7g45843gm7src0000gn/T/'
-TZ = 'UTC'
-USER = 'tung'
-VIRTUAL_ENV = '/Users/tung/Library/Caches/pypoetry/virtualenvs/schools-in-singapore-6eHyMLPa-py3.7'
-WORDCHARS = '*?[]~&;!$%^<>'
-XPC_FLAGS = '0x0'
-XPC_SERVICE_NAME = '0'
-_ = '/Users/tung/.local/bin/poetry'
-__CF_USER_TEXT_ENCODING = '0x1F5:0x0:0x0'
-wsgi.errors = <_io.TextIOWrapper name='<stderr>' mode='w' encoding='UTF-8'>
-wsgi.file_wrapper = ''
-wsgi.input = <django.core.handlers.wsgi.LimitedStream object at 0x7fb0d056ec30>
-wsgi.multiprocess = False
-wsgi.multithread = True
-wsgi.run_once = False
-wsgi.url_scheme = 'http'
-wsgi.version = '(1, 0)'
-
-Settings:
-Using settings module singapore_schools.settings
-ABSOLUTE_URL_OVERRIDES = {}
-ADMINS = [('Tung Dao', 'me@tungdao.com')]
-ALLOWED_HOSTS = []
-APPEND_SLASH = True
-AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend']
-AUTH_PASSWORD_VALIDATORS = '********************'
-AUTH_USER_MODEL = 'auth.User'
-BASE_DIR = '/Users/tung/Projects/insight/schools-in-singapore'
-CACHES = {'default': {'BACKEND': 'django.core.cache.backends.locmem.LocMemCache'}, 'field_keywords': '********************'}
-CACHE_MIDDLEWARE_ALIAS = 'default'
-CACHE_MIDDLEWARE_KEY_PREFIX = '********************'
-CACHE_MIDDLEWARE_SECONDS = 600
-CSRF_COOKIE_AGE = 31449600
-CSRF_COOKIE_DOMAIN = None
-CSRF_COOKIE_HTTPONLY = False
-CSRF_COOKIE_NAME = 'csrftoken'
-CSRF_COOKIE_PATH = '/'
-CSRF_COOKIE_SAMESITE = 'Lax'
-CSRF_COOKIE_SECURE = False
-CSRF_FAILURE_VIEW = 'django.views.csrf.csrf_failure'
-CSRF_HEADER_NAME = 'HTTP_X_CSRFTOKEN'
-CSRF_TRUSTED_ORIGINS = []
-CSRF_USE_SESSIONS = False
-DATABASES = {'default': {'ENGINE': 'django.db.backends.postgresql_psycopg2', 'NAME': 'postgres', 'USER': 'postgres', 'PASSWORD': '********************', 'HOST': 'localhost', 'PORT': 5432, 'ATOMIC_REQUESTS': False, 'AUTOCOMMIT': True, 'CONN_MAX_AGE': 0, 'OPTIONS': {}, 'TIME_ZONE': None, 'TEST': {'CHARSET': None, 'COLLATION': None, 'NAME': None, 'MIRROR': None}}}
-DATABASE_ROUTERS = []
-DATA_UPLOAD_MAX_MEMORY_SIZE = 2621440
-DATA_UPLOAD_MAX_NUMBER_FIELDS = 1000
-DATETIME_FORMAT = 'N j, Y, P'
-DATETIME_INPUT_FORMATS = ['%Y-%m-%d %H:%M:%S', '%Y-%m-%d %H:%M:%S.%f', '%Y-%m-%d %H:%M', '%Y-%m-%d', '%m/%d/%Y %H:%M:%S', '%m/%d/%Y %H:%M:%S.%f', '%m/%d/%Y %H:%M', '%m/%d/%Y', '%m/%d/%y %H:%M:%S', '%m/%d/%y %H:%M:%S.%f', '%m/%d/%y %H:%M', '%m/%d/%y']
-DATE_FORMAT = 'N j, Y'
-DATE_INPUT_FORMATS = ['%Y-%m-%d', '%m/%d/%Y', '%m/%d/%y', '%b %d %Y', '%b %d, %Y', '%d %b %Y', '%d %b, %Y', '%B %d %Y', '%B %d, %Y', '%d %B %Y', '%d %B, %Y']
-DEBUG = True
-DEBUG_PROPAGATE_EXCEPTIONS = False
-DECIMAL_SEPARATOR = '.'
-DEFAULT_CHARSET = 'utf-8'
-DEFAULT_CONTENT_TYPE = 'text/html'
-DEFAULT_EXCEPTION_REPORTER_FILTER = 'django.views.debug.SafeExceptionReporterFilter'
-DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
-DEFAULT_FROM_EMAIL = 'webmaster@localhost'
-DEFAULT_INDEX_TABLESPACE = ''
-DEFAULT_TABLESPACE = ''
-DISALLOWED_USER_AGENTS = []
-ELASTICSEARCH_DSL = {'default': {'hosts': 'localhost:9200'}}
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'localhost'
-EMAIL_HOST_PASSWORD = '********************'
-EMAIL_HOST_USER = ''
-EMAIL_PORT = 25
-EMAIL_SSL_CERTFILE = None
-EMAIL_SSL_KEYFILE = '********************'
-EMAIL_SUBJECT_PREFIX = '[Django] '
-EMAIL_TIMEOUT = None
-EMAIL_USE_LOCALTIME = False
-EMAIL_USE_SSL = False
-EMAIL_USE_TLS = False
-FILE_CHARSET = 'utf-8'
-FILE_UPLOAD_DIRECTORY_PERMISSIONS = None
-FILE_UPLOAD_HANDLERS = ['django.core.files.uploadhandler.MemoryFileUploadHandler', 'django.core.files.uploadhandler.TemporaryFileUploadHandler']
-FILE_UPLOAD_MAX_MEMORY_SIZE = 2621440
-FILE_UPLOAD_PERMISSIONS = None
-FILE_UPLOAD_TEMP_DIR = None
-FIRST_DAY_OF_WEEK = 0
-FIXTURE_DIRS = []
-FORCE_SCRIPT_NAME = None
-FORMAT_MODULE_PATH = None
-FORM_RENDERER = 'django.forms.renderers.DjangoTemplates'
-IGNORABLE_404_URLS = []
-INSTALLED_APPS = ['django.contrib.admin', 'django.contrib.auth', 'django.contrib.contenttypes', 'django.contrib.sessions', 'django.contrib.messages', 'django.contrib.staticfiles', 'django_elasticsearch_dsl', 'schools']
-INTERNAL_IPS = []
-LANGUAGES = [('af', 'Afrikaans'), ('ar', 'Arabic'), ('ast', 'Asturian'), ('az', 'Azerbaijani'), ('bg', 'Bulgarian'), ('be', 'Belarusian'), ('bn', 'Bengali'), ('br', 'Breton'), ('bs', 'Bosnian'), ('ca', 'Catalan'), ('cs', 'Czech'), ('cy', 'Welsh'), ('da', 'Danish'), ('de', 'German'), ('dsb', 'Lower Sorbian'), ('el', 'Greek'), ('en', 'English'), ('en-au', 'Australian English'), ('en-gb', 'British English'), ('eo', 'Esperanto'), ('es', 'Spanish'), ('es-ar', 'Argentinian Spanish'), ('es-co', 'Colombian Spanish'), ('es-mx', 'Mexican Spanish'), ('es-ni', 'Nicaraguan Spanish'), ('es-ve', 'Venezuelan Spanish'), ('et', 'Estonian'), ('eu', 'Basque'), ('fa', 'Persian'), ('fi', 'Finnish'), ('fr', 'French'), ('fy', 'Frisian'), ('ga', 'Irish'), ('gd', 'Scottish Gaelic'), ('gl', 'Galician'), ('he', 'Hebrew'), ('hi', 'Hindi'), ('hr', 'Croatian'), ('hsb', 'Upper Sorbian'), ('hu', 'Hungarian'), ('hy', 'Armenian'), ('ia', 'Interlingua'), ('id', 'Indonesian'), ('io', 'Ido'), ('is', 'Icelandic'), ('it', 'Italian'), ('ja', 'Japanese'), ('ka', 'Georgian'), ('kab', 'Kabyle'), ('kk', 'Kazakh'), ('km', 'Khmer'), ('kn', 'Kannada'), ('ko', 'Korean'), ('lb', 'Luxembourgish'), ('lt', 'Lithuanian'), ('lv', 'Latvian'), ('mk', 'Macedonian'), ('ml', 'Malayalam'), ('mn', 'Mongolian'), ('mr', 'Marathi'), ('my', 'Burmese'), ('nb', 'Norwegian Bokmål'), ('ne', 'Nepali'), ('nl', 'Dutch'), ('nn', 'Norwegian Nynorsk'), ('os', 'Ossetic'), ('pa', 'Punjabi'), ('pl', 'Polish'), ('pt', 'Portuguese'), ('pt-br', 'Brazilian Portuguese'), ('ro', 'Romanian'), ('ru', 'Russian'), ('sk', 'Slovak'), ('sl', 'Slovenian'), ('sq', 'Albanian'), ('sr', 'Serbian'), ('sr-latn', 'Serbian Latin'), ('sv', 'Swedish'), ('sw', 'Swahili'), ('ta', 'Tamil'), ('te', 'Telugu'), ('th', 'Thai'), ('tr', 'Turkish'), ('tt', 'Tatar'), ('udm', 'Udmurt'), ('uk', 'Ukrainian'), ('ur', 'Urdu'), ('vi', 'Vietnamese'), ('zh-hans', 'Simplified Chinese'), ('zh-hant', 'Traditional Chinese')]
-LANGUAGES_BIDI = ['he', 'ar', 'fa', 'ur']
-LANGUAGE_CODE = 'en-us'
-LANGUAGE_COOKIE_AGE = None
-LANGUAGE_COOKIE_DOMAIN = None
-LANGUAGE_COOKIE_NAME = 'django_language'
-LANGUAGE_COOKIE_PATH = '/'
-LOCALE_PATHS = []
-LOGGING = {}
-LOGGING_CONFIG = 'logging.config.dictConfig'
-LOGIN_REDIRECT_URL = '/accounts/profile/'
-LOGIN_URL = '/accounts/login/'
-LOGOUT_REDIRECT_URL = None
-MANAGERS = []
-MEDIA_ROOT = ''
-MEDIA_URL = ''
-MESSAGE_STORAGE = 'django.contrib.messages.storage.fallback.FallbackStorage'
-MIDDLEWARE = ['django.middleware.security.SecurityMiddleware', 'django.contrib.sessions.middleware.SessionMiddleware', 'django.middleware.common.CommonMiddleware', 'django.middleware.csrf.CsrfViewMiddleware', 'django.contrib.auth.middleware.AuthenticationMiddleware', 'django.contrib.messages.middleware.MessageMiddleware', 'django.middleware.clickjacking.XFrameOptionsMiddleware']
-MIGRATION_MODULES = {}
-MONTH_DAY_FORMAT = 'F j'
-NUMBER_GROUPING = 0
-PASSWORD_HASHERS = '********************'
-PASSWORD_RESET_TIMEOUT_DAYS = '********************'
-PREPEND_WWW = False
-REST_FRAMEWORK = {'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination', 'PAGE_SIZE': 20}
-ROOT_URLCONF = 'singapore_schools.urls'
-SECRET_KEY = '********************'
-SECURE_BROWSER_XSS_FILTER = False
-SECURE_CONTENT_TYPE_NOSNIFF = False
-SECURE_HSTS_INCLUDE_SUBDOMAINS = False
-SECURE_HSTS_PRELOAD = False
-SECURE_HSTS_SECONDS = 0
-SECURE_PROXY_SSL_HEADER = None
-SECURE_REDIRECT_EXEMPT = []
-SECURE_SSL_HOST = None
-SECURE_SSL_REDIRECT = False
-SERVER_EMAIL = 'noreply@schools.gov.sg'
-SESSION_CACHE_ALIAS = 'default'
-SESSION_COOKIE_AGE = 1209600
-SESSION_COOKIE_DOMAIN = None
-SESSION_COOKIE_HTTPONLY = True
-SESSION_COOKIE_NAME = 'sessionid'
-SESSION_COOKIE_PATH = '/'
-SESSION_COOKIE_SAMESITE = 'Lax'
-SESSION_COOKIE_SECURE = False
-SESSION_ENGINE = 'django.contrib.sessions.backends.db'
-SESSION_EXPIRE_AT_BROWSER_CLOSE = False
-SESSION_FILE_PATH = None
-SESSION_SAVE_EVERY_REQUEST = False
-SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
-SETTINGS_MODULE = 'singapore_schools.settings'
-SHORT_DATETIME_FORMAT = 'm/d/Y P'
-SHORT_DATE_FORMAT = 'm/d/Y'
-SIGNING_BACKEND = 'django.core.signing.TimestampSigner'
-SILENCED_SYSTEM_CHECKS = []
-STATICFILES_DIRS = ['/Users/tung/Projects/insight/schools-in-singapore/public']
-STATICFILES_FINDERS = ['django.contrib.staticfiles.finders.FileSystemFinder', 'django.contrib.staticfiles.finders.AppDirectoriesFinder']
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
-STATIC_ROOT = '/Users/tung/Projects/insight/schools-in-singapore/static'
-STATIC_URL = '/static/'
-TEMPLATES = [{'BACKEND': 'django.template.backends.django.DjangoTemplates', 'DIRS': ['/Users/tung/Projects/insight/schools-in-singapore/templates'], 'APP_DIRS': True, 'OPTIONS': {'context_processors': ['django.template.context_processors.debug', 'django.template.context_processors.request', 'django.contrib.auth.context_processors.auth', 'django.contrib.messages.context_processors.messages']}}]
-TEST_NON_SERIALIZED_APPS = []
-TEST_RUNNER = 'django.test.runner.DiscoverRunner'
-THOUSAND_SEPARATOR = ','
-TIME_FORMAT = 'P'
-TIME_INPUT_FORMATS = ['%H:%M:%S', '%H:%M:%S.%f', '%H:%M']
-TIME_ZONE = 'UTC'
-USE_I18N = True
-USE_L10N = True
-USE_THOUSAND_SEPARATOR = False
-USE_TZ = True
-USE_X_FORWARDED_HOST = False
-USE_X_FORWARDED_PORT = False
-WSGI_APPLICATION = 'singapore_schools.wsgi.application'
-X_FRAME_OPTIONS = 'SAMEORIGIN'
-YEAR_MONTH_FORMAT = 'F Y'
-
-
-You're seeing this error because you have DEBUG = True in your
-Django settings file. Change that to False, and Django will
-display a standard page generated by the handler for this status code.
-
+{
+  "count": 7,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "id": 299,
+      "name": "NANYANG PRIMARY SCHOOL",
+      "website": "http://www.nyps.moe.edu.sg",
+      "address": "52 KING'S ROAD",
+      "postal_code": "268097",
+      "phone_number": "64672677",
+      "fax_number": "64686913",
+      "email": "NYPS@MOE.EDU.SG",
+      "vision_statement": "Learners of Character, Leaders in Action",
+      "mission_statement": "Developing our pupils to reach their fullest potential within a bicultural environment that is steeped in diligence, prudence, respectability and simplicity, thereby enabling them to contribute to society.",
+      "philosophy": "Nanyang Primary School (NYPS) was established in 1917 as the primary section of The Singapore Nanyang Girls' School. NYPS was separated from the secondary section in 1978 due to increasing pupil enrolment and has functioned as a single-session school since 2004.  It was accorded the Special Assistance Plan (SAP) status in 1984.  In 1990, it began to offer MOE's Gifted Education Programme (GEP). <br /><br />The school strives to provide an education which prepares the students beyond academic excellence. With the provision of a bi-cultural learning environment, students are nurtured to be learners of character and leaders who will create a positive impact on their communities and society. <br /><br />The Nanyang Curriculum adopts the Head, Heart and Hands approach for the holistic development of the students, as the school believes that internalisation, reflection and putting into action values and skills, are key to learning. The key leverage for the holistic development of students in the Nanyang Curriculum is differentiation which caters to students' different learning needs. Building on its rich Chinese traditions and values while equipping our students with 21st century skills and competencies underscores curriculum innovation in NYPS.  <br /><br />An extensive culture for learning and innovation permeates the school as evident in the whole school embarking on the Professional Learning Community (PLC) journey, introducing Lesson Study (LS) as an additional tool to Action Research (AR) and Learning Circle (LC) for teachers to implement curriculum innovations that will deepen their pedagogical knowledge.  <br /><br />The school also believes in establishing strong partnership for the holistic development of students.  The key partners comprising the School Management Committee, Nanyang Schools Alumni Association and Parent Teacher Association work collaboratively to preserve the NYPS spirit and identity, reinforcing the values-based culture via role-modelling and their contributions and support.",
+      "dgp_code": "BUKIT TIMAH",
+      "zone_code": "WEST",
+      "cluster_code": "WEST 5",
+      "type": "GOVERNMENT-AIDED SCH",
+      "session": "SINGLE SESSION",
+      "main_level": "PRIMARY",
+      "language": "Chinese",
+      "offer": "The \"Learning Cultures through Dance\" Learning for Life Programme in Nanyang Primary School aims to develop our pupils holistically beyond academic excellence by building character with understanding of self, others and cultures and developing peaks of growth and excellence. <br /><br />Through this programme pupils learn various dance techniques; acquire knowledge related to the history of the dance; discover their potential through individual dance movements and cooperative social interaction; appreciate the aesthetic aspects of performances; gain a deeper understanding and appreciation of the various ethnic groups in Singapore and the different nationalities of the world.<br /><br />The \"Critical Thinking through Mind Sports\" Applied Learning Programme aims to cultivate in pupils a love for Mind Sports where they learn to find joy and satisfaction in a board game fully embedded with strategy and thinking skills. Through the process of learning and play, pupils acquire life and social-emotional skills; develop strong character traits, cognitive skills and psychological build-up that will serve them well not only during competitions but in daily life situations in the 21st Century.  <br /><br />Through the programme, pupils learn how to interact both on and off the playing board; develop communication, cross-cultural and socio-emotional skills; acquire skills to manage self and relationship; develop thinking skills for Mathematical learning;  acquire key attributes central to the spirit of innovation and enterprise; develop skills in becoming a self-directed learner.<br /><br />Besides the 2 Signature Programmes, NYPS also offers Appreciating Flora Art; Choir; Chinese Dance; Guzheng; Chinese Orchestra; International Dance; String Ensemble; Ceramic Art; Drawing; Photography; Badminton; Basketball; Football; Table Tennis; Tennis; Track & Field; Swimming; Wushu; Golf; International Chess; Boys' and Girls' Brigade; Scouts; Brownies; Advanced Mathematics Enrichment Club; Green Club; Weiqi."
+    },
+    {
+      "id": 344,
+      "name": "NANYANG GIRLS' HIGH SCHOOL",
+      "website": "http://www.nygh.moe.edu.sg",
+      "address": "2 LINDEN DRIVE",
+      "postal_code": "288683",
+      "phone_number": "64663275",
+      "fax_number": "64667564",
+      "email": "NYGHS@MOE.EDU.SG",
+      "vision_statement": "Every Nanyang Girl a Respected Member of Society",
+      "mission_statement": "We nurture women of character in a bilingual bicultural environment anchored in values on which our school was founded.",
+      "philosophy": "Nanyang Girls' High School has a rich tradition and illustrious history. Founded in 1917, the school has remained true to her goal in nurturing well-educated ladies who will contribute to society. Given the school's rich tradition in bicultural education, NYGH prides herself in providing a holistic education, allowing all girls to thrive in a globalised world.  Our curriculum is anchored in values that seek to develop our students to be reflective, responsive and responsible learners, equipped with the knowledge, skills and attributes for the future. The Nanyang experience engages our students in authentic and relevant learning that guides them to create meaningful, useful and shared outcomes. The curriculum allows students to make meaningful connections within and between disciplines, and develop a heart for the community by paying forward through active service. We also keep our students engaged and excited about learning through 1-1 computing. In addition, through our carefully designed experiential learning opportunities that include the Boarding School Experience at our very own Boarding School and our Global Classroom Programme, we provide our students with a holistic education ready for the globalised future.",
+      "dgp_code": "BUKIT TIMAH",
+      "zone_code": "WEST",
+      "cluster_code": "WEST 6",
+      "type": "INDEPENDENT SCHOOL",
+      "session": "SINGLE SESSION",
+      "main_level": "SECONDARY",
+      "language": "Chinese",
+      "offer": "Nanyang Seal of Excellence Talent Development Programme <br />- Four-Tier Chinese Language and Culture Programme which includes Bicultural Studies (Chinese) and Chinese Language Elective Programme<br />. Humanities Programme<br />. Science and Mathematics Talent Programme<br />. Leadership Development<br />. Art Elective Programme (AEP)<br />. Higher Music Programme (HMP)<br /><br />Other programmes that further enrich the students' holistic learning experience include:<br />. Global Classroom Programme<br />. Interdisciplinary Studies<br />. Work Experience Programme<br />. Extended Classroom Programme<br />. Boarding School Experience<br />. Conversational Malay<br />. Community Education and Community Leadership Programme<br />. Philosophical Inquiry<br />. Research Programme<br />. Translation<br />. Drama<br />. Conversational Malay<br /><br />Third Language - NYGH offers Malay Special Programme"
+    },
+    {
+      "id": 339,
+      "name": "CHUNG CHENG HIGH SCHOOL (MAIN)",
+      "website": "http://www.chungchenghighmain.moe.edu.sg",
+      "address": "50 GOODMAN ROAD",
+      "postal_code": "439012",
+      "phone_number": "63441393",
+      "fax_number": "63449686",
+      "email": "CCHMS@MOE.EDU.SG",
+      "vision_statement": "Institution of Eminence, Generations of Leaders; Grounded in Values, Global in Outlook",
+      "mission_statement": "Empowering our students to be Role Models of Learning, Leaders of Society and Pillars of the Nation.",
+      "philosophy": "Guided by the school's philosophy \"Excellence in Education for All\", Chung Cheng High School (Main) is committed to the development of our students and the nurturing of 21st century leaders through a holistic learning experience anchored on strong values. As the East Zone Centre of Excellence (Chinese), the school seeks to promote good practices in the teaching and learning of Chinese and Chinese Culture. A SAP school since 1979, we are committed to deliver an effective bilingual and values-based education. Through comprehensive bi-cultural programmes and various overseas immersion programmes, the school aims to nurture bi-cultural Chung Cheng leaders who are grounded in values, global in outlook and equipped with cross-cultural literacy. The school's rich tradition in culture and arts has seen many renowned talents in the cultural, literary and arts scene amongst our graduates. The Chung Cheng Education Framework focuses on delivering a forward-looking curriculum for the 21st century, equipping all students of Chung Cheng the values and skills that will enable them to excel in the evolving global landscape. As<br />an institution of eminence, the school offers a scenic and cultural environment with ample facilities to continue delivering quality education well into the 21st century.",
+      "dgp_code": "MARINE PARADE",
+      "zone_code": "EAST",
+      "cluster_code": "EAST 4",
+      "type": "GOVERNMENT-AIDED SCH",
+      "session": "SINGLE SESSION",
+      "main_level": "SECONDARY",
+      "language": "Chinese",
+      "offer": "(1) Special Assistance Plan (SAP) School Programmes: Bi-cultural Education Programmes which include Appreciation of Chinese Culture lessons, Calligraphy & Chinese Painting lessons, Tea Art Appreciation lessons, Wushu lessons as part of PE, Dizhi (Chinese Flute) lessons, Learning Journeys to Heritage Centres. (2) Special Development Programmes in the areas of Chinese & Culture (Media production in Chinese, Translation, Literary Writing), Mathematics and Science, Art and Music.(3) Special Interest Programmes: Heritage Docent Programmes (Sun Yat Sen Nanyang Memorial Hall, Malay Heritage Centre). (4) Overseas Learning Programmes: Overseas School Immersion Programme (China Chongqing, Shanghai, Suzhou),<br />Overseas Leadership Development Programme."
+    },
+    {
+      "id": 16,
+      "name": "NANYANG JUNIOR COLLEGE",
+      "website": "http://www.nanyangjc.moe.edu.sg/",
+      "address": "128 SERANGOON AVENUE 3",
+      "postal_code": "556111",
+      "phone_number": "62842281",
+      "fax_number": "62855147",
+      "email": "nyjc@moe.edu.sg",
+      "vision_statement": "A leading college serving the nation with:<br />- Enhanced character development<br />- Quality staff<br />- Quality learners<br />- Organisational excellence",
+      "mission_statement": "Uphold Values<br />Enhance Lifeskills<br />Maximise Potential",
+      "philosophy": "na",
+      "dgp_code": "SERANGOON",
+      "zone_code": "SOUTH",
+      "cluster_code": "SOUTH 6",
+      "type": "GOVERNMENT-AIDED SCH",
+      "session": "FULL DAY",
+      "main_level": "JUNIOR COLLEGE",
+      "language": "na",
+      "offer": "Art Elective Programme (AEP), Language Elective Programme (Chinese) (CLEP), Student Leadership Development Programme, Overseas Service-Learning Programme, Career Guidance Programme, Scholar Development Programme, S6 Centre of Excellance for CL and Art"
+    },
+    {
+      "id": 222,
+      "name": "BROADRICK SECONDARY SCHOOL",
+      "website": "http://www.broadricksec.moe.edu.sg",
+      "address": "61 DAKOTA CRESCENT",
+      "postal_code": "399935",
+      "phone_number": "63445025",
+      "fax_number": "64471427",
+      "email": "BROADRICK_SS@MOE.EDU.SG",
+      "vision_statement": "A Dynamic School providing Holistic Education",
+      "mission_statement": "Nurturing Broadricans to be future-ready learners with Strength of Character",
+      "philosophy": "Broadrick's vision is to become a vibrant learning community where Broadricians will be equipped with life skills and knowledge to meet the challenges of a complex and changing environment.  We educate the whole child and ensure that learning is developmentally appropriate to increase confidence and motivation for learning.<br /><br />Our educational programmes provide opportunities for every Broadrician to be all-rounded and have the zest to lead a purposeful life.  In Broadrick, we focus on developing self-directed Broadricians who are rooted in values.  We also want to educate Broadricians to embrace the spirit of innovation and enterprise so that they are empowered to take calculated risks and develop the resilience to face future challenges.  Teachers are key and students are our focus.  Establishing quality relationships with our stakeholders is crucial to nurture students entrusted in our care.  Broadricians have a sense of responsibility to contribute to the family, school, community, nation and world with the purpose of making a difference.  They learn to serve and serve to learn from others.",
+      "dgp_code": "GEYLANG",
+      "zone_code": "EAST",
+      "cluster_code": "EAST 5",
+      "type": "GOVERNMENT SCHOOL",
+      "session": "SINGLE SESSION",
+      "main_level": "SECONDARY",
+      "language": "Chinese",
+      "offer": "We are recognised by MOE for \"Entrepreneurship in STEM\", which is an applied learning programme that help our students to become inquisitive leaders, critical and creative thinkers who embrace the spirit of creativity and enterprise.  Through school-based Science curriculum, students are involved in inquiry-based projects in collaboration with partners from Science Centre and Nanyang Polytechnic.  Students also learn about design thinking, marketing and examine commercial viability in product designs.  Enrichment activities include hands-on experience in constructing prototype and the Broadrick Digital Intelligence (DI) Programme, making our students to be part of a new generation of digital natives.<br /><br />In our Learning for Life Programme, we nurture Confidence And REsilience (CARE) through Aesthetics, Community and Youth Leadership.  Service Learning is our adopted methodology for experiential learning to develop character and 21st century competencies in our students.  Our comprehensive Service Learning and Aesthetics programmes are structured into the school curriculum and every student is given an opportunity to be exposed to rich, authentic learning experiences as they work with others and with the community at large.  Through these platforms, we aim to progressively develop important life skills in students, such as critical thinking, communication, leadership and active citizenry."
+    },
+    {
+      "id": 251,
+      "name": "TANGLIN SECONDARY SCHOOL",
+      "website": "http://www.tanglinsec.moe.edu.sg",
+      "address": "301 WEST COAST ROAD",
+      "postal_code": "127391",
+      "phone_number": "64248200",
+      "fax_number": "67734457",
+      "email": "tanglin_ss@moe.edu.sg",
+      "vision_statement": "Leaders of the Future, Pride of the Community",
+      "mission_statement": "A caring school with an innovative and engaging curriculum, TSS equips our students with the skills for active lifelong learning and inculcates in them core values that will guide them to succeed in a changing world.",
+      "philosophy": "Guided by our philosophy 'Everyone Is Unique, All Can Succeed', we provide students with rich opportunities to discover and pursue their passion so that they can define success in multiple ways. We strive towards a culture of active learning, ensuring students experience joy in learning that drive their self-directedness. To prepare students for the VUCA (Volatile, Uncertain, Complex, Ambiguous) world, we value the spirit of exploration, cultivating in students the capacity to think critically, creatively and inventively to solve problems. We want them to persevere through challenges and have the flexibility to seize opportunities. All these are grounded on the values of Respect, Responsibility, Resilience, Integrity, Care and Curiosity to Learn that ensure students work collaboratively, exercise leadership and grow to become contributing members of the community.",
+      "dgp_code": "CLEMENTI",
+      "zone_code": "WEST",
+      "cluster_code": "WEST 1",
+      "type": "GOVERNMENT SCHOOL",
+      "session": "SINGLE SESSION",
+      "main_level": "SECONDARY",
+      "language": "Chinese",
+      "offer": "The TSS curriculum is designed to provide students with rich learning opportunities to maximise their potential in the academic and co-curricular areas for future-readiness. Students can pursue subjects such as Electronics, Literature (English) and Art, on top of Pure Sciences and Additional Mathematics. Our Applied Learning Programme, Tanglin PLUS, is a distinctive programme which gives focus to the Humanities. It is aimed at developing students to become informed persons, critical thinkers, confident and effective communicators. Tanglin PLUS takes the learning of Geography, History and Social Studies beyond the classroom, enabling students to apply their knowledge and skills to real-life contexts such as in habitat enhancement programmes in the Singapore Botanic Gardens and community programmes that promote Singapore's unity and security. Tanglin PLUS complements the school's existing strengths in Mathematics, Science and Applied Subjects. For its Lifelong Learning Programme (LLP), TSS is proud to offer the Arts Programme, focusing on Music, Dance and Visual Arts. Students begin with a broad-based exposure to various musical, dance and visual art forms before opting for talent development electives to deepen their skills in show choir, dance, guitar or the visual arts. In collaboration with NAFA and NAC, the Arts Programme also provides students the exposure to the local arts scene and the career opportunities it has to offer. In TSS, it is always about growing leaders. Our customised four-year Student Leadership Development Programme ensures that students are equipped with the leadership skills and competencies so that they become compassionate leaders who are ready to serve society. The partnerships with National University of Singapore, Nanyang Technological University and Singapore Institute of Technology enable us to offer leadership mentoring programmes that inspire our students to set high goals for themselves and strive for excellence."
+    },
+    {
+      "id": 250,
+      "name": "SERANGOON GARDEN SECONDARY SCHOOL",
+      "website": "http://www.sgs.edu.sg",
+      "address": "21 SERANGOON NORTH AVENUE 1",
+      "postal_code": "555889",
+      "phone_number": "62889227",
+      "fax_number": "62888695",
+      "email": "sgss@moe.edu.sg",
+      "vision_statement": "Critical Thinkers. Thoughtful Leaders.",
+      "mission_statement": "Love to Learn, Learn to Lead.",
+      "philosophy": "Since 1959, Serangoon Garden Secondary School (SGS) has been enjoying the trust and confidence of the community and alumni over the last 58 years.  The SGS brand of education is known and valued for growing our students to be future-ready in the culture of care, learning and excellence. The culture of care is evident in the school as our students grow and develop in a safe and nurturing environment, marked by respect for teachers and peers. Anchored on the culture of learning, the vision of the school is based upon our commitment to educate our students to be able to exercise sound reasoning and reflective thinking to make good decisions and manage complexities and ambiguities. They are also able to lead themselves and others effectively with empathy and the heart to care and serve with PRIDE. One of our key beliefs is that all our students are able to learn. As such, we have in place systems and processes to stretch the talent of our higher ability students; at the same time, we have a range of student-centric intervention programmes to help the weaker students so that they can progress and achieve. Committed to the culture of excellence, we challenge our students to take responsibility for their learning, while giving them the necessary support to realise their aspirations. Our goal is to nurture your child academically, grow them socially and emotionally, and guide them towards independent thinking and problem solving. Our end goal is that SGSians will be 'Critical Thinkers and Thoughtful Leaders.'",
+      "dgp_code": "SERANGOON",
+      "zone_code": "SOUTH",
+      "cluster_code": "SOUTH 1",
+      "type": "GOVERNMENT SCHOOL",
+      "session": "SINGLE SESSION",
+      "main_level": "SECONDARY",
+      "language": "Chinese",
+      "offer": "All students enrolling in SGS are emplaced on our signature Applied Learning Programme (ALP), 'Researching Society Using Media Communication', which provides students with opportunities to apply higher order thinking skills in real-life contexts, making learning relevant and meaningful to the students. Our Learning for Life Programme (LLP) focuses on 'Nurturing Confident and Compassionate Leaders', provides students with the opportunities to hone their leadership skills and develop into confident leaders. <br />Students in the Express Course enjoy course attachments with Nanyang Polytechnics as part of our extensive ECG collaborations, while students in the Normal Course will benefit from student-centred programmes which are acknowledged by MOE through the Lee Hsien Loong Award for Innovations in the Normal Course that inculcate 21st century competencies and skills to prepare them for life. In addition, SGS offers the Academic and Character Excellence (ACE) Scholarship, sponsored by our School Advisory Committee(SAC). Express students with at least 225 points, NA students with at least 185 points and N(T) students with at least 150 points from the PSLE, who apply for our school as their first choice, will be considered. These students must have at least a 'Very Good' Conduct Grade. They will be involved in our signature programmes to stretch and prepare them to be future ready: <br />Sec 1 Science Research Programme to open the minds of our young students to the world of Science through Inquiry and Research.<br />Sec 2 Cultural Immersion Programme to encourage talented students to participate in an immersion programme with our twinning schools in Xi'an, China. This programme is also opened to non-Chinese students.<br />Sec 3 ALP Programme to provide a platform for students to facilitate learning for peers and members of the public, while giving back to the community. <br />Sec 4/5 Job Attachment Programme for our students to experience the real-world of work."
+    }
+  ]
+}
 #+end_example
 
 * TODO

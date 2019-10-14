@@ -33,7 +33,7 @@ class SchoolListView(ListAPIView):
             # First result before: id=102, after: id=18
             # fields = models.School.field_names
             fields = [f'{field}^4.0' if field == 'zone_code' else field
-                      for field in models.School.field_names]
+                      for field in documents.SchoolDocument.Django.fields]
             match = MultiMatch(query=' '.join(words), fields=fields)
             search = search.query(match)
 
@@ -49,7 +49,7 @@ class SchoolListView(ListAPIView):
                         filters[field_name] = word
 
             # Only perform search on remaining fields
-            fields = list(models.School.field_names - filters.keys())
+            fields = list(documents.SchoolDocument.Django.fields - filters.keys())
             logging.debug([words, fields, filters])
 
             match = MultiMatch(query=' '.join(words), fields=fields)
