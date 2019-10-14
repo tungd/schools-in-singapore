@@ -1,7 +1,7 @@
 import csv
 
 from django.core.management.base import BaseCommand
-from schools import models
+from schools import documents, models
 
 
 class Command(BaseCommand):
@@ -35,4 +35,4 @@ class Command(BaseCommand):
             'language': row['mothertongue1_code'],
             'offer': row['special_sdp_offered']
         })
-        return {k: row[k] for k in models.School.field_names}
+        return {k: row[k] for k in documents.SchoolDocument.Django.fields}
