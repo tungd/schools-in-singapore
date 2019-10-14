@@ -2,7 +2,8 @@ import csv
 
 import pytest
 from django_elasticsearch_dsl.registries import registry
-from rest_framework.pagination import PageNumberPagination
+from rest_framework.pagination import \
+    PageNumberPagination as PageNumberPaginationBase
 
 from . import documents, models, views
 
@@ -76,6 +77,9 @@ def test_pagination(rf, settings, django_assert_num_queries):
         assert response.data['previous'] is None
 
 
+    class PageNumberPagination(PageNumberPaginationBase):
+        page_size_query_param = 'page_size'
+
     views.SchoolListView.pagination_class = PageNumberPagination
 
     with django_assert_num_queries(1):
@@ -84,7 +88,7 @@ def test_pagination(rf, settings, django_assert_num_queries):
         assert response.status_code == 200
         assert response.data['count'] == 14
         assert len(response.data['results']) == 10
-        assert response.data['next'] is None
+        assert response.data['next'] is not None
         assert response.data['previous'] is None
 
     with django_assert_num_queries(1):
@@ -94,4 +98,4 @@ def test_pagination(rf, settings, django_assert_num_queries):
         assert response.data['count'] == 14
         assert len(response.data['results']) == 4
         assert response.data['next'] is None
-        assert response.data['previous'] is None
+        assert response.data['previous'] is not None
