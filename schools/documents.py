@@ -1,18 +1,19 @@
-from django_elasticsearch_dsl import DocType, Index
+from django_elasticsearch_dsl import Document
+from django_elasticsearch_dsl.registries import registry
 
 from . import models
 
-schools = Index('schools')
 
-schools.settings(
-    number_of_shards=4,
-    number_of_replicas=0
-)
+@registry.register_document
+class SchoolDocument(Document):
+    class Index:
+        name = 'schools'
+        settings = {
+            'number_of_shards': 1,
+            'number_of_replicas': 0
+        }
 
-
-@schools.doc_type
-class SchoolDocument(DocType):
-    class Meta:
+    class Django:
         model = models.School
-        fields = models.School.field_names
+        fields = [f.name for f in models.School._meta.fields[1:]]
         queryset_pagination = 512

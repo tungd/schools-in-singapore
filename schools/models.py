@@ -23,6 +23,3 @@ class School(models.Model):
 
     def __str__(self):
         return self.name
-
-
-School.field_names = [f.name for f in School._meta.fields[1:]]
