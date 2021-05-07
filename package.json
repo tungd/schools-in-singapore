@@ -10,7 +10,7 @@
     "build": "brunch build --production"
   },
   "dependencies": {
-    "lodash": "^4.17.10",
+    "lodash": "^4.17.21",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "tachyons": "^4.10.0"
